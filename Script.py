@@ -17,11 +17,11 @@ renda_alugel = float(input('Qual o valor recebido com alugueis? '))
 rendimento_autônomo = float(input('Qual o valor recebido como autônomo? '))
 auxílio = float(input('Qual o valor recebido pelo FGTS? '))
 valor_total = (salário + aposentadoria + inss + pensão_alimentícia + renda_alugel + rendimento_autônomo)
-if auxílio > 0:
-    (valor_total + auxílio) * 12 > 22847.76
-    print('Você deve declarar o IRPF!')
-elif auxílio <= 0:
-    valor_total* 12 > 28559.70
-    print('Você precisa declarar o IRPF!')
-elif valor_total* 12 > 28559.70:
-    print('Você não precisa declarar o IRPF')
+if auxílio > 0 and((valor_total + auxílio) * 12) > 22847.76:
+        print('Você deve declarar o IRPF!')
+
+if auxílio <= 0 and(valor_total* 12) > 28559.70:
+        print('Você precisa declarar o IRPF!')
+	
+elif auxílio <= 0 and(valor_total* 12) < 28559.70:
+        print('Você não precisa declarar o IRPF')
